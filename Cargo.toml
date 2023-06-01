@@ -1,0 +1,17 @@
+[package]
+name = "cstr-literal"
+version = "0.1.0"
+authors = ["peelz <peelz.dev+rust@gmail.com>"]
+edition = "2021"
+rust-version = "1.64.0"
+description = "A const-friendly macro for C string literals."
+repository = "https://github.com/notpeelz/cstr-literal"
+license = "MIT"
+keywords = ["cstr", "const", "string", "literal", "macro"]
+categories = ["development-tools::ffi", "no-std"]
+
+[dependencies]
+const_format = "0.2.31"
+
+[dev-dependencies]
+trybuild = { version = "1.0.80", features = ["diff"] }

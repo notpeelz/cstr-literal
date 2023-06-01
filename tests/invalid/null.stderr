@@ -1,0 +1,17 @@
+error[E0080]: evaluation of constant value failed
+ --> src/lib.rs
+  |
+  |         [0, _, ..] => panic!("C strings can't contain null bytes"),
+  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the evaluated program panicked at 'C strings can't contain null bytes', $DIR/src/lib.rs:15:23
+  |
+note: inside `new`
+ --> src/lib.rs
+  |
+  |         [0, _, ..] => panic!("C strings can't contain null bytes"),
+  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+note: inside `__CSTR`
+ --> tests/invalid/null.rs:4:3
+  |
+4 |   cstr!("\0");
+  |   ^^^^^^^^^^^
+  = note: this error originates in the macro `$crate::panic::panic_2021` which comes from the expansion of the macro `cstr` (in Nightly builds, run with -Z macro-backtrace for more info)
